@@ -5,5 +5,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayumi-oka/intern_prj.git"
+  },
+  "dependencies": {
+    "simple-server": "^1.1.1"
+  },
+  "scripts": {
+    "start": "simple-server src 8000",
+    "listlist": "ls -la"
   }
 }
