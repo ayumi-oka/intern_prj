@@ -1,0 +1,9 @@
+{
+  "name": "intern_prj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayumi-oka/intern_prj.git"
+  }
+}
