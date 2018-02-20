@@ -7,10 +7,10 @@
     "url": "git+https://github.com/ayumi-oka/intern_prj.git"
   },
   "dependencies": {
-    "simple-server": "^1.1.1"
+    "parcel-bundler": "^1.6.2"
   },
   "scripts": {
-    "start": "simple-server src 8000",
+    "start": "parcel ./src/index.html",
     "listlist": "ls -la"
   }
 }
