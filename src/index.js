@@ -14,8 +14,6 @@ var first_day = new Date(y,m-1,1).getDay();//月の始めの日の曜日
 var w = 1;//w週目
 var d = first_day;//月の始めの日の曜日
 
-console.log("AAAAAAAAAAAAA -> " + y);
-
 // マークアップ生成
 var txt = "";
 txt += '<h1>' + y + '年' + m_display + '月のカレンダー</h1>';
@@ -53,24 +51,27 @@ for(var j=0;j<(6-last_day);j++){
   txt += '<td>&nbsp;</td>\n';//月終わりに空白を入れる
   }
 txt += '</tr>';
-
 txt += '</table>';
 
-var test =  document.getElementById('test');//htmlファイルのid=testを持ってくる
-test.innerHTML = txt; //id=testにtxtを入れ込む
+var calendar =  document.getElementById('calendar');//htmlファイルのid=testを持ってくる
+calendar.innerHTML = txt; //id=calendarにtxtを入れ込む
 
 
-// fetch("https://api.fixer.io/latest?base=USD").then(function(response) {
-//   debugger
-//   return response.json();
-// }).then(function(json) {
-//   debugger
-//   var jpy = json.rates.JPY;
-//   var date = json.date;
-//   debugger
-//   var test =  document.getElementById('test');
-//   test.innerHTML = jpy + '<div>' + date;
+//
+fetch("https://api.fixer.io/latest?base=USD").then(function(response) {
+  return response.json();
+}).then(function(json) {
 
-  // var date =  document.getElementById('date');
-  // date.innerHTML = '<h1>' + date + '</h1>';
-// });
+  //debugger
+  var jpy = json.rates.JPY;
+  var aud = json.rates.AUD;
+  var date = json.date;
+
+  var todayElem =  document.getElementById('today');
+  var jpyElem = document.getElementById('jpy');
+  var audElem =  document.getElementById('aud');
+
+  todayElem.innerHTML = date;
+  jpyElem.innerHTML = jpy;
+  audElem.innerHTML =  aud;
+});
