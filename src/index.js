@@ -13,6 +13,7 @@ var first_day = new Date(y,m-1,1).getDay();//月の始めの日の曜日
 var w = 1;//w週目
 var d = first_day;//月の始めの日の曜日
 
+
 // マークアップ生成
 var txt = "";
 txt += '<h1>' + y + '年' + m_display + '月のカレンダー</h1>';
