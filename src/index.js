@@ -1,6 +1,7 @@
 //　取得したい年月設定（とりあえずPC時間の今日の年月）
 var y = new Date().getFullYear();
 var m = new Date().getMonth()+1;
+var today_red = new Date().getDate();
 
 // 初期設定
 var feb_date = (y%4 == 0 && y%100 != 0)?29:28;//閏年
@@ -43,7 +44,23 @@ for(var i=1;i<=month_count[m];i++){
   var i_display = (i<10)?"0"+String(i):i;//日にちの0付き表現
 
   day_count = (i%7 == 0)? Math.floor(i/7) : Math.floor(i/7) + 1 ;//Math.floor(x) xの斬り捨てた値の表示
-  txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + '">' + i + '</td>';//'<td id="d20180201 class="mon1 date1">1</td>
+
+  // 日付けが今日だったら色を変える
+  // if (i == today_red) {
+  //   txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + ' red">' + i + '</td>';
+  // } else {
+  //   txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + '">' + i + '</td>';
+  // }
+
+  if (i == today_red) {
+  //  txt += '<td class = "red">'+i+'</td>';
+    txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + ' red">' + i + '</td>';
+  }
+
+  if (i != today_red) {
+    txt += '<td id="d' + y + m_display + i_display + '" class="' + day_en['d'+d] + day_count + ' date' + i + '">' + i + '</td>';//'<td id="d20180201 class="mon1 date1">1</td>
+  }
+
   d++;
 }
 

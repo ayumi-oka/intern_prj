@@ -21,6 +21,8 @@ background-color: blue;
 .sun1, .sun2, .sun3, .sun4, .sun5{background:#F9C;color:#fff;}
 .sat1, .sat2, .sat3, .sat4, .sat5{color:blue}
 
+.red{color:red}
+
 .today {
   font-size: 14px;
 }
