@@ -1,4 +1,3 @@
-// console.log("hello world");
 //　取得したい年月設定（とりあえずPC時間の今日の年月）
 var y = new Date().getFullYear();
 var m = new Date().getMonth()+1;
